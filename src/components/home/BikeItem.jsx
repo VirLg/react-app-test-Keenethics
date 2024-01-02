@@ -4,7 +4,7 @@ const BikeItem = ({ data }) => {
   return (
     data &&
     data.map(el => {
-      return <div>element</div>;
+      return <div key={el.id}>element</div>;
     })
   );
 };

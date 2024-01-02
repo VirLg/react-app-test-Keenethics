@@ -15,7 +15,7 @@ export const bikeApi = createApi({
     }),
     addBike: builder.mutation({
       query: body => ({
-        url: `/add`,
+        url: `/`,
         method: 'POST',
         body,
       }),
