@@ -11,3 +11,25 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+.container {
+  max-width: 1152px;
+  margin-left: auto;
+  margin-right: auto;
+}
+p {
+  margin: 0;
+}
+.font-title {
+  font: Saira;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 22.04px;
+}
+.font-price {
+  font: Saira;
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 37.78px;
+  margin-top: 50px;
+  margin-left: auto;
+}
