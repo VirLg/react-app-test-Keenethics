@@ -7,8 +7,10 @@ function App() {
   return (
     <div className="App">
       <Header />
-      <MainPage />
-      <FormAddBike />
+      <div style={{ display: 'flex' }} className="container">
+        <MainPage />
+        <FormAddBike />
+      </div>
     </div>
   );
 }

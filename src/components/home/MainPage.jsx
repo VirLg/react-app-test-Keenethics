@@ -6,7 +6,7 @@ const MainPage = () => {
   const { data, error, isLoading } = useGetBikesQuery();
   console.log('data', data);
   return (
-    <div className="container">
+    <div>
       MainPage
       <BikeItem data={data} />
     </div>
