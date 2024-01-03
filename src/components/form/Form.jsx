@@ -79,7 +79,7 @@ const FormAddBike = () => {
         <ErrorMessage name="description" />
 
         <button type="submit">Save</button>
-        <button type="submit">Clear</button>
+        <button type="button">Clear</button>
       </Form>
     </Formik>
   );
