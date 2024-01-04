@@ -28,8 +28,22 @@ export const bikeApi = createApi({
       }),
       invalidatesTags: ['TagBike'],
     }),
+    updateBike: builder.mutation({
+      query: ({ id, value }) => ({
+        url: `/${id}`,
+        method: 'PUT',
+        body: {
+          status: value,
+        },
+      }),
+      invalidatesTags: ['TagBike'],
+    }),
   }),
 });
 
-export const { useGetBikesQuery, useAddBikeMutation, useDeleteBikeMutation } =
-  bikeApi;
+export const {
+  useGetBikesQuery,
+  useAddBikeMutation,
+  useDeleteBikeMutation,
+  useUpdateBikeMutation,
+} = bikeApi;

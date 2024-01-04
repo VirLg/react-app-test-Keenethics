@@ -1,9 +1,20 @@
-import React from 'react';
-import { useDeleteBikeMutation } from '../redux/rtkQuery/bikes';
+import React, { useState } from 'react';
+import {
+  useDeleteBikeMutation,
+  useUpdateBikeMutation,
+} from '../redux/rtkQuery/bikes';
 import { BikeItemDiv } from './BikeItem.styled';
 
 const BikeItem = ({ data }) => {
   const [deleteBike] = useDeleteBikeMutation();
+  const [selectedFruit, setSelectedFruit] = useState('orange');
+  console.log('first', selectedFruit);
+  const [updateBike] = useUpdateBikeMutation();
+  const handleStatusChange = obj => {
+    updateBike(obj);
+    console.log('obj', obj);
+    // e => setSelectedFruit(e.target.value);
+  };
   return (
     data &&
     data.map(el => {
@@ -16,6 +27,16 @@ const BikeItem = ({ data }) => {
               <p className="font-title">Color : {el.id}</p>
             </div>
             <p>ID : {el.id}</p>
+            <select
+              value={selectedFruit}
+              onChange={e =>
+                handleStatusChange({ value: e.target.value, id: el.id })
+              }
+            >
+              <option value="apple">Apple</option>
+              <option value="banana">Banana</option>
+              <option value="orange">Orange</option>
+            </select>
             <p className="font-title">Status : {el.id}</p>
           </div>
           <p className="font-price">Price : {el.id} UAH/hr</p>
