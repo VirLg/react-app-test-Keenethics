@@ -13,7 +13,7 @@ const BikeItem = ({ data }) => {
   const handleStatusChange = obj => {
     updateBike(obj);
     console.log('obj', obj);
-    // e => setSelectedFruit(e.target.value);
+    setSelectedFruit(obj.value);
   };
   return (
     data &&
@@ -28,7 +28,7 @@ const BikeItem = ({ data }) => {
             </div>
             <p>ID : {el.id}</p>
             <select
-              value={selectedFruit}
+              value={el.status}
               onChange={e =>
                 handleStatusChange({ value: e.target.value, id: el.id })
               }
