@@ -7,13 +7,10 @@ import { BikeItemDiv } from './BikeItem.styled';
 
 const BikeItem = ({ data }) => {
   const [deleteBike] = useDeleteBikeMutation();
-  const [selectedFruit, setSelectedFruit] = useState('orange');
-  console.log('first', selectedFruit);
+
   const [updateBike] = useUpdateBikeMutation();
   const handleStatusChange = obj => {
     updateBike(obj);
-    console.log('obj', obj);
-    setSelectedFruit(obj.value);
   };
   return (
     data &&
@@ -33,9 +30,9 @@ const BikeItem = ({ data }) => {
                 handleStatusChange({ value: e.target.value, id: el.id })
               }
             >
-              <option value="apple">Apple</option>
-              <option value="banana">Banana</option>
-              <option value="orange">Orange</option>
+              <option value="available">Available</option>
+              <option value="busy">Busy</option>
+              <option value="unavailable">Unavailable</option>
             </select>
             <p className="font-title">Status : {el.id}</p>
           </div>
