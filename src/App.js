@@ -13,8 +13,13 @@ function App() {
         <MainPage />
         <div>
           <FormAddBike />
-          <Statistics />
+          <div className="statistic-div">
+            <Statistics />
+          </div>
         </div>
+      </div>
+      <div style={{ marginTop: '12px' }}>
+        <Header />
       </div>
     </div>
   );

@@ -41,7 +41,7 @@ p {
 }
 .field {
   width: 230px;
-  height: 29px;
+  height: 26px;
   border-radius: 5px;
   padding: 5px, 16px, 5px, 16px;
 }
@@ -51,4 +51,46 @@ p {
   border-radius: 5px;
   padding: 5px, 16px, 5px, 16px;
   gap: 10px;
+}
+.button-form {
+  width: 236px;
+  height: 24px;
+  background-color: rgba(105, 105, 105, 1);
+  border-radius: 5px;
+  color: rgba(255, 255, 255, 1);
+  padding: 4px, 22px, 4px, 22px;
+  font: Saira;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 22.04px;
+  align-items: center;
+}
+.statistic-div {
+  height: 161px;
+  border-top: 1px solid rgba(196, 196, 196, 1);
+  margin-left: 10px;
+  text-align: start;
+}
+
+.statistic-title {
+  font: Saira;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 22.04px;
+  align-items: center;
+  margin-top: 10px;
+}
+.statistic-text {
+  font: Saira;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 22.04px;
+  align-items: center;
+}
+.span-statistic {
+  font: Saira;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 22.04px;
+  align-items: center;
 }

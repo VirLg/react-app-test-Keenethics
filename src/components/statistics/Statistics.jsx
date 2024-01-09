@@ -26,11 +26,22 @@ const Statistics = () => {
   }, [data]);
   return (
     <div>
-      <p>Total Bikes : {data && data.length}</p>
-      <p>Available : {statisik.available}</p>
-      <p>Busy : {statisik.busy}</p>
-      <p>
-        Average bike cost : {(sum / Number(data && data.length)).toFixed(2)}
+      <p className="statistic-title">Statistic</p>
+      <p className="statistic-text">
+        Total Bikes :{' '}
+        <span className="span-statistic">{data && data.length}</span>
+      </p>
+      <p className="statistic-text">
+        Available : <span className="span-statistic">{statisik.available}</span>
+      </p>
+      <p className="statistic-text">
+        Busy : <span className="span-statistic">{statisik.busy}</span>
+      </p>
+      <p className="statistic-text">
+        Average bike cost :{' '}
+        <span className="span-statistic">
+          {(sum / Number(data && data.length)).toFixed(2)}
+        </span>
       </p>
     </div>
   );
