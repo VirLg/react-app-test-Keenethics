@@ -6,8 +6,13 @@ const MainPage = () => {
   const { data, error, isLoading } = useGetBikesQuery();
 
   return (
-    <div>
-      MainPage
+    <div
+      style={{
+        paddingRight: '8px',
+        paddingLeft: '12px',
+        borderRight: '1px solid rgba(196, 196, 196, 1)',
+      }}
+    >
       <BikeItem data={data} />
     </div>
   );
