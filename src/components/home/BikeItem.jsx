@@ -30,6 +30,7 @@ const BikeItem = ({ data }) => {
                 handleStatusChange({ value: e.target.value, id: el.id })
               }
             >
+              <option value="select">Selected Status</option>
               <option value="available">Available</option>
               <option value="busy">Busy</option>
               <option value="unavailable">Unavailable</option>
