@@ -11,9 +11,11 @@ function App() {
       <Header />
       <div style={{ display: 'flex' }} className="container">
         <MainPage />
-        <FormAddBike />
+        <div>
+          <FormAddBike />
+          <Statistics />
+        </div>
       </div>
-      <Statistics />
     </div>
   );
 }

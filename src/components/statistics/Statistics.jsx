@@ -18,13 +18,21 @@ const Statistics = () => {
     // const Booked Bikes: 0
     // const Average bike cost: 0.00 UAH/hr.
   };
-  // useEffect(() => {
-  //   statistic(data);
-  // }, [data]);
+
+  const sum = data.reduce((a, b) => a + b.price, 0);
+
+  useEffect(() => {
+    statistic(data);
+  }, [data]);
   return (
     <div>
       <p>Total Bikes : {data && data.length}</p>
-      <p>{statisik.available}</p>
+      <p>Available : {statisik.available}</p>
+      <p>Busy : {statisik.busy}</p>
+      <p>Unavailable : {statisik.unavailable}</p>
+      <p>
+        Average bike cost : {(sum / Number(data && data.length)).toFixed(2)}
+      </p>
     </div>
   );
 };

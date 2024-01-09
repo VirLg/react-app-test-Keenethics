@@ -34,7 +34,7 @@ const FormAddBike = () => {
         wheelSize: Yup.string()
           .max(20, 'Must be 20 characters or less')
           .required('Required'),
-        price: Yup.string()
+        price: Yup.number()
           .max(20, 'Must be 20 characters or less')
           .required('Required'),
         description: Yup.string()
@@ -64,7 +64,12 @@ const FormAddBike = () => {
         />
         <ErrorMessage name="wheelSize" />
 
-        <Field className="field" placeholder="price" name="price" type="text" />
+        <Field
+          className="field"
+          placeholder="price"
+          name="price"
+          type="number"
+        />
         <ErrorMessage name="price" />
 
         <Field className="field" placeholder="id" name="id" type="text" />
