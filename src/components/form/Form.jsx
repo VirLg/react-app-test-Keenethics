@@ -46,7 +46,10 @@ const FormAddBike = () => {
       })}
       onSubmit={value => valueForm(value)}
     >
-      <Form className="form-container">
+      <Form
+        className="form-container"
+        style={{ width: '490px', padding: '10px', gap: '12px' }}
+      >
         <Field className="field" placeholder="name" name="name" type="text" />
         <ErrorMessage name="name" />
 
