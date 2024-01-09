@@ -35,13 +35,13 @@ const FormAddBike = () => {
           .max(20, 'Must be 20 characters or less')
           .required('Required'),
         price: Yup.number()
-          .max(20, 'Must be 20 characters or less')
+          .max(100, 'Must be 100 characters or less')
           .required('Required'),
         description: Yup.string()
           .max(20, 'Must be 20 characters or less')
           .required('Required'),
-        id: Yup.string()
-          .max(20, 'Must be 20 characters or less')
+        id: Yup.number()
+          .max(2000, 'Must be 2000 characters or less')
           .required('Required'),
       })}
       onSubmit={value => valueForm(value)}
