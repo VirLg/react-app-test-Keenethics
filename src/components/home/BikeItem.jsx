@@ -40,7 +40,7 @@ const BikeItem = ({ data }) => {
             </div>
           </div>
           <p className="font-price">Price : {el.price}.00 UAH/hr</p>
-          <button type="button" onClick={() => deleteBike(el.id)}>
+          <button type="button" onClick={() => deleteBike(el._id)}>
             Del
           </button>
         </BikeItemDiv>

@@ -1,11 +1,13 @@
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
 
 // console.log('first', process.env.REACT_APP_BASE_URL);
+
 export const bikeApi = createApi({
   reducerPath: 'bikeRtk',
   // process.env.REACT_APP_BASE_URL
   baseQuery: fetchBaseQuery({
-    baseUrl: 'https://656b819ddac3630cf7282c4a.mockapi.io/advarts/bike',
+    // baseUrl:https://656b819ddac3630cf7282c4a.mockapi.io/advarts/bike
+    baseUrl: 'http://localhost:4000/api/bikes',
   }),
   tagTypes: ['TagBike'],
   endpoints: builder => ({
@@ -15,7 +17,7 @@ export const bikeApi = createApi({
     }),
     addBike: builder.mutation({
       query: body => ({
-        url: `/`,
+        url: `/add`,
         method: 'POST',
         body,
       }),
