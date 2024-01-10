@@ -30,8 +30,8 @@ const FormAddBike = () => {
         color: Yup.string()
           .max(20, 'Must be 20 characters or less')
           .required('Required'),
-        wheelSize: Yup.string()
-          .max(20, 'Must be 20 characters or less')
+        wheelSize: Yup.number()
+          .max(50, 'Must be 50 characters or less')
           .required('Required'),
         price: Yup.number()
           .max(100, 'Must be 100 characters or less')
@@ -62,7 +62,7 @@ const FormAddBike = () => {
           className="field"
           placeholder="Wheel Size"
           name="wheelSize"
-          type="text"
+          type="number"
         />
         <ErrorMessage name="wheelSize" />
 
