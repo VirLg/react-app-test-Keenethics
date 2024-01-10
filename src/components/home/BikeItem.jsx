@@ -16,7 +16,7 @@ const BikeItem = ({ data }) => {
     data &&
     data.map(el => {
       return (
-        <BikeItemDiv key={el.id}>
+        <BikeItemDiv key={el._id}>
           <div>
             <div style={{ display: 'flex' }}>
               <p>Name : {el.name}</p>
@@ -29,7 +29,7 @@ const BikeItem = ({ data }) => {
               <select
                 value={el.status}
                 onChange={e =>
-                  handleStatusChange({ value: e.target.value, id: el.id })
+                  handleStatusChange({ value: e.target.value, id: el._id })
                 }
               >
                 <option value="select">Selected Status</option>

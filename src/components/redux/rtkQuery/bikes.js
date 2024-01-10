@@ -35,7 +35,7 @@ export const bikeApi = createApi({
         url: `/${id}`,
         method: 'PUT',
         body: {
-          status: value,
+          stat: value,
         },
       }),
       invalidatesTags: ['TagBike'],

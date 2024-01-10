@@ -1,10 +1,15 @@
 import React, { useEffect, useState } from 'react';
-import { useGetBikesQuery } from '../redux/rtkQuery/bikes';
+import {
+  useGetBikesQuery,
+  useUpdateBikeMutation,
+} from '../redux/rtkQuery/bikes';
 
 const Statistics = () => {
   const { data, error, isLoading } = useGetBikesQuery();
+
   const [statisik, setStatistik] = useState({});
   const statistic = value => {
+    console.log('value', value);
     const available =
       value && value.filter(el => el.status === 'available').length;
     const busy = value && value.filter(el => el.status === 'busy').length;
@@ -22,6 +27,7 @@ const Statistics = () => {
   const sum = data && data.reduce((a, b) => a + b.price, 0);
 
   useEffect(() => {
+    console.log('data', data);
     statistic(data);
   }, [data]);
   return (
