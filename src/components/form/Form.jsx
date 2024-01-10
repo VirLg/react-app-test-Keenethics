@@ -7,7 +7,6 @@ const FormAddBike = () => {
   const [addBike] = useAddBikeMutation();
 
   const valueForm = data => {
-    console.log('data1', data);
     addBike(data);
   };
   return (
