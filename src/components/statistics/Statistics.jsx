@@ -1,35 +1,19 @@
-import React, { useEffect, useState } from 'react';
-import {
-  useGetBikesQuery,
-  useUpdateBikeMutation,
-} from '../redux/rtkQuery/bikes';
+import React from 'react';
+import { useGetBikesQuery } from '../redux/rtkQuery/bikes';
 
 const Statistics = () => {
   const { data, error, isLoading } = useGetBikesQuery();
 
-  const [statisik, setStatistik] = useState({});
-  const statistic = value => {
-    console.log('value', value);
-    const available =
-      value && value.filter(el => el.status === 'available').length;
-    const busy = value && value.filter(el => el.status === 'busy').length;
-    const unavailable =
-      value && value.filter(el => el.status === 'unavailable').length;
-
-    const stat = { available, busy, unavailable };
-    setStatistik(stat);
-    return stat;
-
-    // const Booked Bikes: 0
-    // const Average bike cost: 0.00 UAH/hr.
-  };
-
   const sum = data && data.reduce((a, b) => a + b.price, 0);
 
-  useEffect(() => {
-    console.log('data', data);
-    statistic(data);
-  }, [data]);
+  let busy = 0;
+  let available = 0;
+  data &&
+    data.map(el => {
+      if (el.stat === 'busy') busy += 1;
+      else if (el.stat === 'available') available += 1;
+    });
+
   return (
     <div>
       <p className="statistic-title">Statistic</p>
@@ -38,10 +22,10 @@ const Statistics = () => {
         <span className="span-statistic">{data && data.length}</span>
       </p>
       <p className="statistic-text">
-        Available : <span className="span-statistic">{statisik.available}</span>
+        Available : <span className="span-statistic">{available}</span>
       </p>
       <p className="statistic-text">
-        Busy : <span className="span-statistic">{statisik.busy}</span>
+        Busy : <span className="span-statistic">{busy}</span>
       </p>
       <p className="statistic-text">
         Average bike cost :{' '}

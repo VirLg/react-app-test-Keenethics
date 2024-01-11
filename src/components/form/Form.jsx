@@ -22,25 +22,24 @@ const FormAddBike = () => {
       }}
       validationSchema={Yup.object({
         name: Yup.string()
-          .max(15, 'Must be 15 characters or less')
+          .min(5, 'Min Must be 5 characters or less')
           .required('Required'),
         type: Yup.string()
-          .max(20, 'Must be 20 characters or less')
+          .min(5, 'Min Must be 5 characters or less')
           .required('Required'),
         color: Yup.string()
-          .max(20, 'Must be 20 characters or less')
+          .min(5, 'Min Must be 5 characters or less')
           .required('Required'),
         wheelSize: Yup.number()
-          .max(50, 'Must be 50 characters or less')
+          .min(10, 'Minimum Must be  10 ')
+          .max(50, 'Maximum Must be  50 ')
           .required('Required'),
-        price: Yup.number()
-          .max(100, 'Must be 100 characters or less')
-          .required('Required'),
+        price: Yup.number().max(100, 'Must be 100').required('Required'),
         description: Yup.string()
-          .max(20, 'Must be 20 characters or less')
+          .min(5, 'Min Must be 5 characters or less')
           .required('Required'),
         id: Yup.string()
-          .max(5, 'Must be 5 characters or less')
+          .min(5, 'Min Must be 5 characters or less')
           .required('Required'),
       })}
       onSubmit={value => valueForm(value)}
@@ -50,21 +49,23 @@ const FormAddBike = () => {
         style={{ width: '490px', padding: '10px', gap: '12px' }}
       >
         <Field className="field" placeholder="name" name="name" type="text" />
-        <ErrorMessage name="name" />
+        <ErrorMessage name="name">{errorMsg => alert(errorMsg)}</ErrorMessage>
 
         <Field className="field" placeholder="type" name="type" type="text" />
-        <ErrorMessage name="type" />
+        <ErrorMessage name="type">{errorMsg => alert(errorMsg)}</ErrorMessage>
 
         <Field className="field" placeholder="color" name="color" type="text" />
-        <ErrorMessage name="color" />
+        <ErrorMessage name="color">{errorMsg => alert(errorMsg)}</ErrorMessage>
 
         <Field
           className="field"
-          placeholder="Wheel Size"
+          placeholder="Wheel Size must be on 10 to 50"
           name="wheelSize"
           type="number"
         />
-        <ErrorMessage name="wheelSize" />
+        <ErrorMessage name="wheelSize">
+          {errorMsg => alert(errorMsg)}
+        </ErrorMessage>
 
         <Field
           className="field"
@@ -72,10 +73,10 @@ const FormAddBike = () => {
           name="price"
           type="number"
         />
-        <ErrorMessage name="price" />
+        <ErrorMessage name="price">{errorMsg => alert(errorMsg)}</ErrorMessage>
 
         <Field className="field" placeholder="id" name="id" type="text" />
-        <ErrorMessage name="id" />
+        <ErrorMessage name="id">{errorMsg => alert(errorMsg)}</ErrorMessage>
 
         <Field
           name="description"
@@ -83,7 +84,9 @@ const FormAddBike = () => {
           placeholder="description"
           type="text"
         />
-        <ErrorMessage name="description" />
+        <ErrorMessage name="description">
+          {errorMsg => alert(errorMsg)}
+        </ErrorMessage>
 
         <button type="submit" className="button-form">
           Save

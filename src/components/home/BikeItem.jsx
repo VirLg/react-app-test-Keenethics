@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import {
   useDeleteBikeMutation,
   useUpdateBikeMutation,
@@ -25,9 +25,9 @@ const BikeItem = ({ data }) => {
             </div>
             <p style={{ textAlign: 'justify' }}>ID : {el.id}</p>
             <div style={{ display: 'flex', gap: '18px' }}>
-              <p className="font-title">Status : {el.id}</p>
+              <p className="font-title">Status : </p>
               <select
-                value={el.status}
+                value={el.stat}
                 onChange={e =>
                   handleStatusChange({ value: e.target.value, id: el._id })
                 }
