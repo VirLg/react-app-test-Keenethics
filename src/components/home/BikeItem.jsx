@@ -41,7 +41,7 @@ const BikeItem = ({ data }) => {
           </div>
           <p className="font-price">Price : {el.price}.00 UAH/hr</p>
           <button type="button" onClick={() => deleteBike(el._id)}>
-            Del
+            X
           </button>
         </BikeItemDiv>
       );
