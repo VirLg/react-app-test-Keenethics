@@ -1,6 +1,7 @@
 import styled from '@emotion/styled';
 
 export const BikeItemDiv = styled.div`
+position:relative;
   width: 600px;
   height: 83px;
   gap: 6px;
@@ -13,4 +14,15 @@ export const BikeItemDiv = styled.div`
   display: flex;
   
 }
+`;
+export const CloseButton = styled.button`
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 50px;
+  height: 50px;
+  background-color: inherit;
+  margin: 0;
+  padding: 0;
+  border: none;
 `;
