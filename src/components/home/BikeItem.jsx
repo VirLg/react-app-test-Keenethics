@@ -3,7 +3,7 @@ import {
   useDeleteBikeMutation,
   useUpdateBikeMutation,
 } from '../redux/rtkQuery/bikes';
-import { BikeItemDiv } from './BikeItem.styled';
+import { BikeItemDiv, CloseButton } from './BikeItem.styled';
 
 const BikeItem = ({ data }) => {
   const [deleteBike] = useDeleteBikeMutation();
@@ -40,9 +40,9 @@ const BikeItem = ({ data }) => {
             </div>
           </div>
           <p className="font-price">Price : {el.price}.00 UAH/hr</p>
-          <button type="button" onClick={() => deleteBike(el._id)}>
+          <CloseButton type="button" onClick={() => deleteBike(el._id)}>
             X
-          </button>
+          </CloseButton>
         </BikeItemDiv>
       );
     })
